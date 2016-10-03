@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}主界面{% endblock %}
+
+<!--内容中引入时间戳-->
+{% block page_content %}
+<div class="page-header">
+    <h1>Hello World!!</h1>
+</div>
+{{ moment.lang("zh-CN") }}
+<p>{{ moment(current_time).format('LLL') }}</p>
+<p>{{ moment(current_time).fromNow(refresh=True) }}</p>
+<p>{{ moment().calendar() }}.</p>
+{% endblock %}
+
+<!--表单登录-->
+{% block body %}
+{{ super() }}
+<!--判断是否有登录错误信息-->
+{% if message %}
+    <p style="cloor:red">{{ message }}</p>
+{% endif %}
+
+<form action="/signin"  method="post">
+    <h3>Pleaea sign in:</h3>
+    <p><input type="text" name="username" placeholder="Username" value="username" ></p>
+    <p><input type="password" name="password" placeholder="Password" value="password"></p>
+    <p><button type="submit"> Sign In </button></p>
+</form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

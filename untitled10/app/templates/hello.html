@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %} Flask {% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Hello World!</h1>
+    <h1>Hello,{% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+    {% if not known %}
+    <p>初次见面，请多指教！</p>
+    {% else %}
+    <p>Nice to meet you again!</p>
+    {% endif %}
+</div>
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=0_Lm5uHj4uHj5_SToqL9sLy_" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/></a>
+{{ wtf.quick_form(form) }}
+
+{% endblock %}

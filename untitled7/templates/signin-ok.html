@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} <h2>登陆成功</h2> {% endblock %}
+
+{% block page_content %}
+<h2>{{ username }}恭喜你，登陆成功！ 干杯！</h2>
+<div>
+{{ moment.lang("zh-CN") }}
+<p>{{ moment(current_time).format('LLL') }}</p>
+<p>{{ moment(current_time).fromNow(refresh=True) }}</p>
+<p>{{ moment().calendar() }}.</p>
+</div>
+{% endblock %}

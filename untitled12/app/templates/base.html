@@ -1,0 +1,52 @@
+{% extends "bootstrap/base.html" %}
+<!--#继承自bootstrap/base.html-->
+
+{% block head %}
+{{ super() }}
+{{ moment.lang("zh-CN") }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"
+    type ="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"
+    type ="image/x-icon">
+{% endblock %}
+<!--引入了收藏夹图标-->
+
+<!--通过js引入时间戳-->
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+
+
+{% block navbar %}
+<!--#重新定义 navbar block-->
+<div class="navbar navbar-inverse" role = 'navigation'>
+    <div class="container">
+        <dic class="navbar-header">
+            <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <a class="navbar-collapse" href="/">三角形</a>
+        </dic>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">主界面</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!--#重新定义conent block-->
+<div class="container">
+    {% block page_content %}{% endblock %}
+    <!--#重新定义page_content block-->
+</div>
+{% endblock %}
+
