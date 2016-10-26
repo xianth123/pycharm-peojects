@@ -1,0 +1,8 @@
+<p>你好 {{ user.username }},</p>
+<p> <b>欢迎注册闲谈后开发的博客系统</b></p>
+<p>请点击以下地址进行确认<a href="{{ url_for('auth.confirm', token=token, _external=True) }}">点我点我！</a>.</p>
+<p>如果不是你注册了该帐号，别理就是了</p>
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+<p>——闲谈后</p>
+<p><small>对了，别回复该邮件，否则我的邮箱会爆掉的········</small></p>
+

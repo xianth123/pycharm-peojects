@@ -1,0 +1,9 @@
+<ul>
+    {% for follow in follows %}
+    <a href="{{ url_for('.user', username=follow['user'].username }}">
+        <img src="{{ url_for('stadic', filename='xianth_yue.jpg')}}" ></a>
+    <a href="{{ url_for('.user', username=follow['user'].username }}">{{ follow['user'].username }}</a>
+    <p>{{ follow['timestamp'] }}</p>
+    {% endfor %}
+
+</ul>
