@@ -13,7 +13,7 @@ flask_web
 导入设置。<br>
 输入app.run（）运行程序。<br>
 ![](https://github.com/xianth123/pycharm-peojects/blob/master/jietu.png)<br>
-用浏览器打开http://127.0.0.1:5000/即可进入博客系统。<br>
+用浏览器打开 http://127.0.0.1:5000/  即可进入博客系统。<br>
 
 <br>
 <b>测试：</b><br>
